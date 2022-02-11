@@ -23,6 +23,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// get_words
+std::list<std::string> get_words(std::string& x);
+RcppExport SEXP _bfstr_get_words(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::string& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(get_words(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // string_replace
 std::vector<std::string> string_replace(std::vector<std::string> pattern, std::vector<std::string> replacement, std::vector<std::string> x);
 RcppExport SEXP _bfstr_string_replace(SEXP patternSEXP, SEXP replacementSEXP, SEXP xSEXP) {
@@ -50,6 +61,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_bfstr_count_substring", (DL_FUNC) &_bfstr_count_substring, 2},
+    {"_bfstr_get_words", (DL_FUNC) &_bfstr_get_words, 1},
     {"_bfstr_string_replace", (DL_FUNC) &_bfstr_string_replace, 3},
     {"_bfstr_string_table", (DL_FUNC) &_bfstr_string_table, 1},
     {NULL, NULL, 0}
