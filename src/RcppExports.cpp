@@ -58,12 +58,26 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// vec_replace
+CharacterVector vec_replace(CharacterVector x, CharacterVector find, CharacterVector replace);
+RcppExport SEXP _bfstr_vec_replace(SEXP xSEXP, SEXP findSEXP, SEXP replaceSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type find(findSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type replace(replaceSEXP);
+    rcpp_result_gen = Rcpp::wrap(vec_replace(x, find, replace));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_bfstr_count_substring", (DL_FUNC) &_bfstr_count_substring, 2},
     {"_bfstr_get_words", (DL_FUNC) &_bfstr_get_words, 1},
     {"_bfstr_string_replace", (DL_FUNC) &_bfstr_string_replace, 3},
     {"_bfstr_string_table", (DL_FUNC) &_bfstr_string_table, 1},
+    {"_bfstr_vec_replace", (DL_FUNC) &_bfstr_vec_replace, 3},
     {NULL, NULL, 0}
 };
 

@@ -5,11 +5,19 @@ count_substring <- function(pattern, x) {
     .Call('_bfstr_count_substring', PACKAGE = 'bfstr', pattern, x)
 }
 
+get_words <- function(x) {
+    .Call('_bfstr_get_words', PACKAGE = 'bfstr', x)
+}
+
 string_replace <- function(pattern, replacement, x) {
     .Call('_bfstr_string_replace', PACKAGE = 'bfstr', pattern, replacement, x)
 }
 
 string_table <- function(x) {
     .Call('_bfstr_string_table', PACKAGE = 'bfstr', x)
+}
+
+vec_replace <- function(x, find, replace) {
+    .Call('_bfstr_vec_replace', PACKAGE = 'bfstr', x, find, replace)
 }
 
