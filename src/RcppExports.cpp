@@ -34,6 +34,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rm_btw
+std::string rm_btw(std::string x, char a, char b);
+RcppExport SEXP _bfstr_rm_btw(SEXP xSEXP, SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::string >::type x(xSEXP);
+    Rcpp::traits::input_parameter< char >::type a(aSEXP);
+    Rcpp::traits::input_parameter< char >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(rm_btw(x, a, b));
+    return rcpp_result_gen;
+END_RCPP
+}
 // string_replace
 std::vector<std::string> string_replace(std::vector<std::string> pattern, std::vector<std::string> replacement, std::vector<std::string> x);
 RcppExport SEXP _bfstr_string_replace(SEXP patternSEXP, SEXP replacementSEXP, SEXP xSEXP) {
@@ -59,14 +72,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // vec_replace
-CharacterVector vec_replace(CharacterVector x, CharacterVector find, CharacterVector replace);
+std::vector<std::string> vec_replace(std::vector<std::string> x, std::vector<std::string> find, std::vector<std::string> replace);
 RcppExport SEXP _bfstr_vec_replace(SEXP xSEXP, SEXP findSEXP, SEXP replaceSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< CharacterVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< CharacterVector >::type find(findSEXP);
-    Rcpp::traits::input_parameter< CharacterVector >::type replace(replaceSEXP);
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type x(xSEXP);
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type find(findSEXP);
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type replace(replaceSEXP);
     rcpp_result_gen = Rcpp::wrap(vec_replace(x, find, replace));
     return rcpp_result_gen;
 END_RCPP
@@ -75,6 +88,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_bfstr_count_substring", (DL_FUNC) &_bfstr_count_substring, 2},
     {"_bfstr_get_words", (DL_FUNC) &_bfstr_get_words, 1},
+    {"_bfstr_rm_btw", (DL_FUNC) &_bfstr_rm_btw, 3},
     {"_bfstr_string_replace", (DL_FUNC) &_bfstr_string_replace, 3},
     {"_bfstr_string_table", (DL_FUNC) &_bfstr_string_table, 1},
     {"_bfstr_vec_replace", (DL_FUNC) &_bfstr_vec_replace, 3},
