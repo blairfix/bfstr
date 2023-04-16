@@ -9,6 +9,10 @@ get_words <- function(x) {
     .Call('_bfstr_get_words', PACKAGE = 'bfstr', x)
 }
 
+rm_btw <- function(x, a, b) {
+    .Call('_bfstr_rm_btw', PACKAGE = 'bfstr', x, a, b)
+}
+
 string_replace <- function(pattern, replacement, x) {
     .Call('_bfstr_string_replace', PACKAGE = 'bfstr', pattern, replacement, x)
 }
