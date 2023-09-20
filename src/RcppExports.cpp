@@ -47,6 +47,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// string_index
+Rcpp::NumericVector string_index(Rcpp::StringVector x);
+RcppExport SEXP _bfstr_string_index(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::StringVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(string_index(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // string_replace
 std::vector<std::string> string_replace(std::vector<std::string> pattern, std::vector<std::string> replacement, std::vector<std::string> x);
 RcppExport SEXP _bfstr_string_replace(SEXP patternSEXP, SEXP replacementSEXP, SEXP xSEXP) {
@@ -89,6 +100,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_bfstr_count_substring", (DL_FUNC) &_bfstr_count_substring, 2},
     {"_bfstr_get_words", (DL_FUNC) &_bfstr_get_words, 1},
     {"_bfstr_rm_btw", (DL_FUNC) &_bfstr_rm_btw, 3},
+    {"_bfstr_string_index", (DL_FUNC) &_bfstr_string_index, 1},
     {"_bfstr_string_replace", (DL_FUNC) &_bfstr_string_replace, 3},
     {"_bfstr_string_table", (DL_FUNC) &_bfstr_string_table, 1},
     {"_bfstr_vec_replace", (DL_FUNC) &_bfstr_vec_replace, 3},
