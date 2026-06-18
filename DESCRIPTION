@@ -3,7 +3,7 @@ Type: Package
 Title: bfstr
 Version: 0.1.0
 Author: Blair Fix
-Maintainer: <blairfix@gmail.com>
+Maintainer: <blairfix@fastmail.com>
 Description: Tools for manipulating strings
 Depends: R (>= 3.0.2), RcppArmadillo (>= 0.7.960.1.1)
 License: GPL
