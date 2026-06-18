@@ -6,7 +6,6 @@
 
 using namespace Rcpp;
 
-// [[Rcpp::plugins(cpp11)]]
 // [[Rcpp::export]]
 
 std::map<std::string, int> string_table( std::vector<std::string> x )
@@ -18,28 +17,28 @@ std::map<std::string, int> string_table( std::vector<std::string> x )
     // test that x is not null
     if(x.size() >= 1){
 
-        // sort x
-        boost::sort::spreadsort::spreadsort(x.begin(), x.end());
+	// sort x
+	boost::sort::spreadsort::spreadsort(x.begin(), x.end());
 
-        // loop over x and test if new element found
-        int count = 1;
+	// loop over x and test if new element found
+	int count = 1;
 
-        for(int i = 1; i < x.size(); i++){
+	for(int i = 1; i < x.size(); i++){
 
-            if( x[i] == x[i- 1] ) {
+	    if( x[i] == x[i- 1] ) {
 
-                count++;
+		count++;
 
-            } else{
+	    } else{
 
-                output[ x[i - 1] ] = count;
-                count = 1;
+		output[ x[i - 1] ] = count;
+		count = 1;
 
-            }
-        }
+	    }
+	}
 
-        // last element
-        output[ x[ x.size() - 1 ] ] = count;
+	// last element
+	output[ x[ x.size() - 1 ] ] = count;
     }
 
     return output;

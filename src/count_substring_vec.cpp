@@ -6,7 +6,6 @@
 
 using namespace Rcpp;
 
-// [[Rcpp::plugins(cpp11)]]
 // [[Rcpp::export]]
 
 std::vector<int>  count_substring_vec (

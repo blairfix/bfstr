@@ -23,6 +23,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// count_substring_vec
+std::vector<int> count_substring_vec(std::string pattern, std::vector<std::string> vec);
+RcppExport SEXP _bfstr_count_substring_vec(SEXP patternSEXP, SEXP vecSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::string >::type pattern(patternSEXP);
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type vec(vecSEXP);
+    rcpp_result_gen = Rcpp::wrap(count_substring_vec(pattern, vec));
+    return rcpp_result_gen;
+END_RCPP
+}
 // get_words
 std::list<std::string> get_words(std::string& x);
 RcppExport SEXP _bfstr_get_words(SEXP xSEXP) {
@@ -98,6 +110,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_bfstr_count_substring", (DL_FUNC) &_bfstr_count_substring, 2},
+    {"_bfstr_count_substring_vec", (DL_FUNC) &_bfstr_count_substring_vec, 2},
     {"_bfstr_get_words", (DL_FUNC) &_bfstr_get_words, 1},
     {"_bfstr_rm_btw", (DL_FUNC) &_bfstr_rm_btw, 3},
     {"_bfstr_string_index", (DL_FUNC) &_bfstr_string_index, 1},

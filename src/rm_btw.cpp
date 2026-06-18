@@ -38,7 +38,7 @@ std::string rm_btw(
 	    }
 	}
     }
-    
+
 
     return output;
 

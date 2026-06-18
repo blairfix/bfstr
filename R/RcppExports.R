@@ -5,12 +5,20 @@ count_substring <- function(pattern, x) {
     .Call('_bfstr_count_substring', PACKAGE = 'bfstr', pattern, x)
 }
 
+count_substring_vec <- function(pattern, vec) {
+    .Call('_bfstr_count_substring_vec', PACKAGE = 'bfstr', pattern, vec)
+}
+
 get_words <- function(x) {
     .Call('_bfstr_get_words', PACKAGE = 'bfstr', x)
 }
 
 rm_btw <- function(x, a, b) {
     .Call('_bfstr_rm_btw', PACKAGE = 'bfstr', x, a, b)
+}
+
+string_index <- function(x) {
+    .Call('_bfstr_string_index', PACKAGE = 'bfstr', x)
 }
 
 string_replace <- function(pattern, replacement, x) {

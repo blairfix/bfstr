@@ -3,7 +3,6 @@
 #include <string>
 
 
-// [[Rcpp::plugins(cpp11)]]
 // [[Rcpp::export]]
 
 Rcpp::NumericVector string_index ( Rcpp::StringVector x )

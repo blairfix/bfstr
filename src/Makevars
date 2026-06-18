@@ -1,2 +1,2 @@
-PKG_CXXFLAGS = -std=c++11 -O3 -march=native
+PKG_CXXFLAGS =  -O3 -march=native
 

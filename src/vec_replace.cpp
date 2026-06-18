@@ -5,7 +5,6 @@
 
 using namespace Rcpp;
 
-// [[Rcpp::plugins(cpp11)]]
 // [[Rcpp::export]]
 
 std::vector<std::string> vec_replace( 

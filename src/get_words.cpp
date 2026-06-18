@@ -12,7 +12,6 @@
 
 using namespace Rcpp;
 
-// [[Rcpp::plugins(cpp11)]]
 // [[Rcpp::export]]
 
 std::list<std::string> get_words( std::string &x )
